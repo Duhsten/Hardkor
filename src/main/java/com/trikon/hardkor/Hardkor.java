@@ -25,12 +25,12 @@ import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 
 public class Hardkor {
-    private MinecraftServer server;
+    private final MinecraftServer server;
     private static Hardkor instance;
     private static final String[] LOW_HEALTH_MESSAGES = new String[]{"is close to death!", "might die in a sec...", "is not really good at the game and is about to die", "has very low health"};
     private static final String[] DEATH_MESSAGES = new String[]{"has died...", "is dead..."};
 
-    private List<String> lowHealthPlayers;
+    private final List<String> lowHealthPlayers;
 
     public static Hardkor getInstance() {
 
@@ -39,7 +39,7 @@ public class Hardkor {
 
     public Hardkor(MinecraftServer server) {
         this.server = server;
-        this.instance = this;
+        instance = this;
         this.lowHealthPlayers = new ArrayList();
         server.addTickable(new Runner());
     }

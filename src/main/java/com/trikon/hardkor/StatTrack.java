@@ -62,12 +62,7 @@ public class StatTrack {
 		updatePlayers();
 		for(WebStats s : stats) {
 			if(s.mcuser.equals(username)) {
-				if(s.alive == 1) {
-					return true;
-				}
-				else {
-					return false;
-				}
+                return s.alive == 1;
 			}
 		}
 		return false;

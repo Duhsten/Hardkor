@@ -12,6 +12,6 @@ public class Runner implements Runnable {
             throw new RuntimeException(e);
         }
         StatTrack.getInstance().updatePlayers();
-       //Hardkor.getInstance().trackPlayersHealth();
+       Hardkor.getInstance().trackPlayersHealth();
     }
 }
